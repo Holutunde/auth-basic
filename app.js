@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 
 const auth = require('./server/routes/auth');
-const notFound = require('./middleware/not-found');
+const notFound = require('./middleware/notFound');
+const errorHandler = require('./middleware/errorHandler')
 
 
 // middleware
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/main', auth);
 
 app.use(notFound);
+app.use(errorHandler);
 
 
 const port = process.env.PORT || 3000;
