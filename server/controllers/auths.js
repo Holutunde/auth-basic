@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const BadRequest = require('../../errors/bad-request')
+const BadRequest = require('../../errors/badRequest')
 
 const login = async (req, res) => {
   const { username, password } = req.body
